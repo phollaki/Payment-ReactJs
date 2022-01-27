@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  position: relative;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.app::before {
+  content: '';
+  background-image: url('../public/background.jpeg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+.app__window {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  width: 70rem;
+  height: 40rem;
+  border-radius: 20px;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
+.app__window-left {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-column: 1/2;
+  overflow: hidden;
+  position: relative;
+}
+.image {
+  height: 100%;
+  width: 100%;
+}
+.window__left-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app__window-right {
+  align-self: stretch;
+  justify-self: stretch;
+  grid-column: 2/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.window__right-header {
+  color: #70a8df;
+}
+.window__right-body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.window__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.1rem;
+  color: gray;
+}
+.window__form label {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+.window__form input {
+  height: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  border: none;
+  font-size: 1.1rem;
+  color: gray;
+  border-bottom: 3px solid #70a8df;
+  padding-bottom: 10px;
+}
+.window__form-title {
+  color: #01224d;
+  margin: 2rem 0rem;
+}
+.window__form input:focus {
+  outline: none;
+}
+::placeholder {
+  font-size: 1.1rem;
+}
+.window__form button {
+  border: none;
+  background-color: #70a8df;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.window__form button:hover {
+  background-color: #01224d;
+  transition: all 0.3s ease-in-out;
+}
+.window__form-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.window__form-bottom:hover {
+}
+.window__form-bottom input {
+  width: 80%;
 }
